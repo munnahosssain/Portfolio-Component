@@ -1,23 +1,41 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="portfolio" id="portfolio">
+      <h1>Portfolio</h1>
+      <ul>
+        <li className="active">Featured</li>
+        <li className="">Web App</li>
+        <li className="">Web Design</li>
+        <li className="">ReactJs</li>
+      </ul>
+      <div className="container">
+        <div className="items">
+          <img className="img-wrapping" src="https://th.bing.com/th/id/OIP.YGR8eN_lXngsauhGw3_efwHaFE?pid=ImgDet&rs=1" alt="" />
+          <h3>Banking App</h3>
+        </div>
+        <div className="items">
+          <img className="img-wrapping" src="https://th.bing.com/th/id/OIP.YGR8eN_lXngsauhGw3_efwHaFE?pid=ImgDet&rs=1" alt="" />
+          <h3>Banking App</h3>
+        </div>
+        <div className="items">
+          <img className="img-wrapping" src="https://th.bing.com/th/id/OIP.YGR8eN_lXngsauhGw3_efwHaFE?pid=ImgDet&rs=1" alt="" />
+          <h3>Banking App</h3>
+        </div>
+        <div className="items">
+          <img className="img-wrapping" src="https://th.bing.com/th/id/OIP.YGR8eN_lXngsauhGw3_efwHaFE?pid=ImgDet&rs=1" alt="" />
+          <h3>Banking App</h3>
+        </div>
+        <div className="items">
+          <img className="img-wrapping" src="https://th.bing.com/th/id/OIP.YGR8eN_lXngsauhGw3_efwHaFE?pid=ImgDet&rs=1" alt="" />
+          <h3>Banking App</h3>
+        </div>
+        <div className="items">
+          <img className="img-wrapping" src="https://th.bing.com/th/id/OIP.YGR8eN_lXngsauhGw3_efwHaFE?pid=ImgDet&rs=1" alt="" />
+          <h3>Banking App</h3>
+        </div>
+      </div>
     </div>
   );
 }

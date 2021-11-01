@@ -55,20 +55,6 @@ ul {
   list-style: none;
 }
 
-li {
-  font-size: 20px;
-  margin-right: 80px;
-  padding: 7px;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-@media (max-width: 1026px) {
-  li {
-    margin-right: 35px;
-  }
-}
-
 .active {
   color: #fff;
   background-color: #272323;
@@ -113,7 +99,3 @@ h3 {
   font-size: 20px;
   position: absolute;
 }
-
-
-
-/* 1:28.00 */

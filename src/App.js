@@ -1,40 +1,82 @@
+import { useEffect, useState } from 'react';
 import './App.css';
-
+import PortfolioList from './component/PortfolioList/PortfolioList';
+import {
+  featuredPortfolio,
+  webPortfolio,
+  mobilePortfolio,
+  designPortfolio,
+  contentPortfolio
+} from './data'
 function App() {
+
+  const [selected, setSelected] = useState('featured');
+  const [data, setData] = useState([]);
+
+  const lists = [
+    {
+      id: "featured",
+      title: "Featured"
+    },
+    {
+      id: "web",
+      title: "WebApp"
+    },
+    {
+      id: "design",
+      title: "WebDesign"
+    },
+    {
+      id: "react",
+      title: "ReactJs"
+    }
+  ];
+
+  useEffect(() => {
+    switch (selected) {
+      case "featured":
+        setData(featuredPortfolio);
+        break;
+
+      case "web":
+        setData(webPortfolio);
+        break;
+
+      case "design":
+        setData(mobilePortfolio);
+        break;
+
+      case "react":
+        setData(designPortfolio);
+        break;
+
+      default:
+        setData(featuredPortfolio);
+    }
+  }, [selected])
+
   return (
     <div className="portfolio" id="portfolio">
       <h1>Portfolio</h1>
       <ul>
-        <li className="active">Featured</li>
-        <li className="">Web App</li>
-        <li className="">Web Design</li>
-        <li className="">ReactJs</li>
+        {
+          lists.map(lists => <PortfolioList
+            title={lists.title}
+            active={selected === lists.id}
+            setSelected={setSelected}
+            id={lists.id}
+          />)
+        }
       </ul>
       <div className="container">
-        <div className="items">
-          <img className="img-wrapping" src="https://th.bing.com/th/id/OIP.YGR8eN_lXngsauhGw3_efwHaFE?pid=ImgDet&rs=1" alt="" />
-          <h3>Banking App</h3>
-        </div>
-        <div className="items">
-          <img className="img-wrapping" src="https://th.bing.com/th/id/OIP.YGR8eN_lXngsauhGw3_efwHaFE?pid=ImgDet&rs=1" alt="" />
-          <h3>Banking App</h3>
-        </div>
-        <div className="items">
-          <img className="img-wrapping" src="https://th.bing.com/th/id/OIP.YGR8eN_lXngsauhGw3_efwHaFE?pid=ImgDet&rs=1" alt="" />
-          <h3>Banking App</h3>
-        </div>
-        <div className="items">
-          <img className="img-wrapping" src="https://th.bing.com/th/id/OIP.YGR8eN_lXngsauhGw3_efwHaFE?pid=ImgDet&rs=1" alt="" />
-          <h3>Banking App</h3>
-        </div>
-        <div className="items">
-          <img className="img-wrapping" src="https://th.bing.com/th/id/OIP.YGR8eN_lXngsauhGw3_efwHaFE?pid=ImgDet&rs=1" alt="" />
-          <h3>Banking App</h3>
-        </div>
-        <div className="items">
-          <img className="img-wrapping" src="https://th.bing.com/th/id/OIP.YGR8eN_lXngsauhGw3_efwHaFE?pid=ImgDet&rs=1" alt="" />
-          <h3>Banking App</h3>
-        </div>
+        {
+          data.map((data) => (
+            <div className="items">
+              <img className="img-wrapping" src={data.img} alt="" />
+              <h3>{data.title}</h3>
+            </div>
+          ))
+        }
       </div>
     </div>
   );
